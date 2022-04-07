@@ -18,6 +18,8 @@
       href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
       rel="stylesheet"
     />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <link rel="stylesheet" href="style.css" />
     <title>Work Day Scheduler</title>
   </head>
@@ -27,71 +29,57 @@
       <h1 class="display-3">Work Day Scheduler</h1>
       <p class="lead">A simple calendar app for scheduling your work day</p>
       <p id="currentDay" class="lead"></p>
+      <button type="button" class="btn btn-primary">Clear Schedule</button>
     </header>
-    <div class="input-group">
-        <div class="input-group">
-            <span class="input-group-text">9AM</span>
-            <input type="text" class="form-control" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1">
-            <button class="btn btn-outline-secondary" type="button" id="button-addon1">Save</button>
+
+    <div class="container">
+        <div class="row row-cols-3 border">
+            <div class="timeInput col text-left border">09:00AM</div>
+            <textarea class="form-control col-10" type="text" id="9AM" hour="09" placeholder="Type event here..."></textarea>
+            <div class="col border d-flex align-items-center justify-content-center saveBtn save-container"><i class="fas fa-clock"></i></div>
+        </div>
+        <div class="row row-cols-3 border">
+            <div class="timeInput col text-left border">10:00AM</div>
+            <textarea class="form-control col-10" type="text" id="10AM" hour="10" placeholder="Type event here..."></textarea>
+            <div class="col border d-flex align-items-center justify-content-center saveBtn save-container"><i class="fas fa-clock"></i></div>
+        </div>
+        <div class="row row-cols-3 border">
+            <div class="timeInput col text-left border">11:00AM</div>
+            <textarea class="form-control col-10" type="text" id="11AM" data-hour="11" placeholder="Type event here..."></textarea>
+            <div class="col border d-flex align-items-center justify-content-center saveBtn save-container"><i class="fas fa-clock"></i></div>
+        </div>
+        <div class="row row-cols-3 border">
+            <div class="timeInput col text-left border">12:00PM</div>
+            <textarea class="form-control col-10" type="text" id="12PM" data-hour="12" placeholder="Type event here..."></textarea>
+            <div class="col border d-flex align-items-center justify-content-center saveBtn save-container"><i class="fas fa-clock"></i></div>
+        </div>
+        <div class="row row-cols-3 border">
+            <div class="timeInput col text-left border">01:00PM</div>
+            <textarea class="form-control col-10" type="text" id="1PM" data-hour="13" placeholder="Type event here..."></textarea>
+            <div class="col border d-flex align-items-center justify-content-center saveBtn save-container"><i class="fas fa-clock"></i></div>
+        </div>
+        <div class="row row-cols-3 border">
+            <div class="timeInput col text-left border">02:00PM</div>
+            <textarea class="form-control col-10" type="text" id="2PM" data-hour="14" placeholder="Type event here..."></textarea>
+            <div class="col border d-flex align-items-center justify-content-center saveBtn save-container"><i class="fas fa-clock"></i></div>
+        </div>
+        <div class="row row-cols-3 border">
+            <div class="timeInput col text-left border">03:00PM</div>
+            <textarea class="form-control col-10" type="text" id="3PM" data-hour="15" placeholder="Type event here..."></textarea>
+            <div class="col border d-flex align-items-center justify-content-center saveBtn save-container"><i class="fas fa-clock"></i></div>
+        </div>
+        <div class="row row-cols-3 border">
+            <div class="timeInput col text-left border">04:00PM</div>
+            <textarea class="form-control col-10" type="text" id="4PM" data-hour="16" placeholder="Type event here..."></textarea>
+            <div class="col border d-flex align-items-center justify-content-center saveBtn save-container"><i class="fas fa-clock"></i></div>
+        </div>
+        <div class="row row-cols-3 border">
+            <div class="timeInput col text-left border">05:00PM</div>
+            <textarea class="form-control col-10" type="text" id="5PM" data-hour="17" placeholder="Type event here..."></textarea>
+            <div class="col border d-flex align-items-center justify-content-center saveBtn save-container"><i class="fas fa-clock"></i></div>
+        </div>
         </div>
     </div>
-    <div class="input-group">
-        <div class="input-group">
-            <span class="input-group-text">10AM</span>
-            <input type="text" class="form-control" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1">
-            <button class="btn btn-outline-secondary" type="button" id="button-addon1">Save</button>
-        </div>
-    </div>
-    <div class="input-group">
-        <div class="input-group">
-            <span class="input-group-text">11AM</span>
-            <input type="text" class="form-control" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1">
-            <button class="btn btn-outline-secondary" type="button" id="button-addon1">Save</button>
-        </div>
-    </div>
-    <div class="input-group">
-        <div class="input-group">
-            <span class="input-group-text">12PM</span>
-            <input type="text" class="form-control" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1">
-            <button class="btn btn-outline-secondary" type="button" id="button-addon1">Save</button>
-        </div>
-    </div>
-    <div class="input-group">
-        <div class="input-group">
-            <span class="input-group-text">1PM</span>
-            <input type="text" class="form-control" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1">
-            <button class="btn btn-outline-secondary" type="button" id="button-addon1">Save</button>
-        </div>
-    </div>
-    <div class="input-group">
-        <div class="input-group">
-            <span class="input-group-text">2PM</span>
-            <input type="text" class="form-control" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1">
-            <button class="btn btn-outline-secondary" type="button" id="button-addon1">Save</button>
-        </div>
-    </div>
-    <div class="input-group">
-        <div class="input-group">
-            <span class="input-group-text">3PM</span>
-            <input type="text" class="form-control" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1">
-            <button class="btn btn-outline-secondary" type="button" id="button-addon1">Save</button>
-        </div>
-    </div>
-    <div class="input-group">
-        <div class="input-group">
-            <span class="input-group-text">4PM</span>
-            <input type="text" class="form-control" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1">
-            <button class="btn btn-outline-secondary" type="button" id="button-addon1">Save</button>
-        </div>
-    </div>
-    <div class="input-group">
-        <div class="input-group">
-            <span class="input-group-text">5PM</span>
-            <input type="text" class="form-control" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1">
-            <button class="btn btn-outline-secondary" type="button" id="button-addon1">Save</button>
-        </div>
-    </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="./script.js"></script>
   </body>
 </html>
