@@ -9,10 +9,12 @@
 
 **Requirements**
 * Screenshots:
-  
-* The URL of the deployed application
+![Scheduler main page screenshot](https://github.com/jchoe125/Third-Party-APIs---Work-Day-Scheduler/blob/main/Screenshots/work%20day%20scheduler.JPG)
 
-* The URL of the GitHub repository, with a unique name and a README describing the project
+![Persistent data screenshot](https://github.com/jchoe125/Third-Party-APIs---Work-Day-Scheduler/blob/main/Screenshots/Persisting%20data.JPG)
 
-- - -
-© 2022 Trilogy Education Services, LLC, a 2U, Inc. brand. Confidential and Proprietary. All Rights Reserved.
+* URL of the deployed application:
+  https://jchoe125.github.io/Third-Party-APIs---Work-Day-Scheduler/
+
+* URL of the GitHub repository:
+  https://github.com/jchoe125/Third-Party-APIs---Work-Day-Scheduler
