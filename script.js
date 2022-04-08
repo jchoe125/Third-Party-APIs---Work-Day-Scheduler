@@ -43,5 +43,5 @@ function timeChecker() {
             $(this).addClass("future");
         }
     })
-    timeChecker();
 }
+timeChecker();
